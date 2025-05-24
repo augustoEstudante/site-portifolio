@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Augusto Miguel - Portfólio</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto Mono', monospace;}
+        body {background: #121212; color: #e0e0e0; line-height: 1.6;}
+        header {background: #1f1f1f; color: #fff; padding: 40px 0; text-align: center;}
+        header h1 {font-size: 2.5rem; margin-bottom: 10px;}
+        section {padding: 60px 20px; max-width: 1000px; margin: auto;}
+        h2 {color: #ff5722; margin-bottom: 20px; font-size: 1.8rem;}
+        .highlight {color: #ff5722; font-weight: bold;}
+        a {color: #ff5722; text-decoration: none;}
+        .btn {background: #ff5722; color: white; padding: 12px 25px; border: none; border-radius: 5px; text-decoration: none; display: inline-block; margin-top: 20px;}
+        .skills {display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px;}
+        .skill {background: #1f1f1f; padding: 12px 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.4);}
+        .chart {max-width: 600px; margin: 60px auto; background: #1f1f1f; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.4);}
+        footer {background: #1f1f1f; color: #fff; padding: 30px 0; text-align: center; margin-top: 60px;}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Augusto Miguel</h1>
+        <p>Estudante de Análise e Desenvolvimento de Sistemas | Futuro Analista de Dados</p>
+    </header>
+
+    <section>
+        <h2>Sobre Mim</h2>
+        <p>Sou estudante do <span class="highlight">IFTO - Araguaína</span>, cursando Análise e Desenvolvimento de Sistemas. Busco minha primeira oportunidade como <span class="highlight">Analista de Power BI</span> ou <span class="highlight">Assistente de Tecnologia</span>. Apaixonado por tecnologia e dados, estou sempre em busca de novos conhecimentos.</p>
+    </section>
+
+    <section>
+        <h2>Formação Acadêmica</h2>
+        <ul>
+            <li>Técnico em Informática - IFTO Araguaína (2023)</li>
+            <li>Análise e Desenvolvimento de Sistemas - IFTO Araguaína (Cursando)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Projetos</h2>
+        <ul>
+            <li><a href="https://github.com/augustoEstudante/projectsEmSala" target="_blank">Projects em Sala</a> – Projetos focados em lógica, estrutura de dados e boas práticas.</li>
+            <li><a href="https://github.com/augustoEstudante/Crud" target="_blank">CRUD – Sistema de Cadastro</a> – Aplicação com operações CRUD para estudo de banco de dados.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Habilidades</h2>
+        <div class="skills">
+            <div class="skill">Java</div>
+            <div class="skill">SQL</div>
+            <div class="skill">Power BI (em aprendizado)</div>
+            <div class="skill">MySQL</div>
+            <div class="skill">Git</div>
+            <div class="skill">GitHub</div>
+            <div class="skill">VSCode</div>
+            <div class="skill">Eclipse</div>
+            <div class="skill">Inglês - Intermediário</div>
+        </div>
+    </section>
+
+    <section class="chart">
+        <h2>Gráfico de Competências</h2>
+        <canvas id="skillsChart"></canvas>
+    </section>
+
+    <section>
+        <h2>Contato</h2>
+        <p>Email: <a href="mailto:agustomiguelsilvasouza4@gmail.com">agustomiguelsilvasouza4@gmail.com</a></p>
+        <p>Telefone: (63) 99219-3531</p>
+        <p>Endereço: Rua B - Residencial Cazatotto</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Augusto Miguel. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const ctx = document.getElementById('skillsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['Java', 'SQL', 'Power BI', 'MySQL', 'Git', 'Inglês'],
+                datasets: [{
+                    label: 'Nível de Habilidade',
+                    data: [8, 7, 5, 7, 8, 6],
+                    fill: true,
+                    backgroundColor: 'rgba(255, 87, 34, 0.3)',
+                    borderColor: '#ff5722',
+                    pointBackgroundColor: '#ff5722',
+                    pointBorderColor: '#fff'
+                }]
+            },
+            options: {
+                scales: {
+                    r: {
+                        angleLines: { color: '#333' },
+                        grid: { color: '#333' },
+                        pointLabels: { color: '#fff' },
+                        ticks: { color: '#fff', backdropColor: '#1f1f1f' },
+                        suggestedMin: 0,
+                        suggestedMax: 10
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: { color: '#fff' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
